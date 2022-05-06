@@ -1,5 +1,9 @@
 //JavaScript Document
 //clicking
+let dog_amount = 0
+let dogClicks =  0
+let dogUpgradeCost =  75
+let dogCPS = 0
 let Clicks = 0
 let SunClicks = 0
 let Suns = 0
@@ -177,6 +181,17 @@ function upgradeSun() {
 	}
 }
 
+function upgradedog() {
+	if (dogUpgradeCost <= popsicleNumber )
+	{
+		dogCPS += 0.00333333333334
+		dog_amount += 1
+		popsiclesSpent += dogUpgradeCost
+		dogUpgradeCost = Math.ceil(dogUpgradeCost * 1.15)
+	}
+}
+
+
 function biggerWings(){
 	if (biggerWingsUpgradeCost <= popsicleNumber)
 	{
@@ -251,10 +266,12 @@ function gameLoop()
 	w.onmessage = function(e) {
 		SunClicks = e.data.SunClicks;
 		AllTowerClicks = e.data.AllTowerClicks;
+		dogClicks= e.data.dogClicks;
 	}
 
 	w.postMessage({ 
 		SunCPS: SunCPS,
+		dogCPS: dogCPS,
 		SeaGullCPS: SeaGullCPS,
 		SeaGullLevel: SeaGullLevel
 	})
@@ -264,6 +281,7 @@ function gameLoop()
 	document.getElementById("SunPriceP").innerHTML = "$" + SunUpgradeCost
 	document.getElementById("SeaGullPriceP").innerHTML = "$" + SeaGullUpgradeCost
 	document.getElementById("BiggerWingsPriceP").innerHTML = "$" + biggerWingsUpgradeCost
+	document.getElementById("DogPriceP").innerHTML = "$" + dogUpgradeCost
 }
 
 //shows and hides the shop
@@ -323,11 +341,18 @@ function loadGame()
 	if (typeof savedGame.popsicleNumber !== "undefined"){popsicleNumber = savedGame.popsicleNumber}
 	if (typeof savedGame.sun_amount !== "undefined"){sun_amount = savedGame.sun_amount}
 	if (typeof savedGame.biggerWingsUpgradeCost !== "undefined"){biggerWingsUpgradeCost = savedGame.biggerWingsUpgradeCost}
+	if (typeof savedGame.dog_amount !== "undefined"){dog_amount = savedGame.dog_amount}
+if (typeof savedGame.dogClicks !== "undefined"){dogClicks = savedGame.dogClicks}
+if (typeof savedGame.dogUpgradeCost !== "undefined"){dogUpgradeCost = savedGame.dogUpgradeCost}
+if (typeof savedGame.dogCPS !== "undefined"){dogCPS = savedGame.dogCPS}
+
 	document.getElementById("name").innerHTML = Name
 	w.postMessage({ 
 		SunCPS: SunCPS, 
+		dogCPS: dogCPS,
 		SeaGullCPS: SeaGullCPS,
 		SunClicks: SunClicks,
+		dogClicks: dogClicks,
 		AllTowerClicks: AllTowerClicks,
 		SeaGullLevel: SeaGullLevel
 	})	
@@ -337,6 +362,11 @@ function saveGame()
 {
 	var gameSave = 
 	{
+		dog_amount: dog_amount,
+dogClicks: dogClicks,
+dogUpgradeCost: dogUpgradeCost,
+dogCPS: dogCPS,
+
 		SeaGullLevel: SeaGullLevel,
 		Name: Name,
 		Clicks: Clicks,
@@ -375,6 +405,11 @@ function clearSave(){
 	//set vars to defualt
 	Name = "Change Name Here"
 	biggerWingsUpgradeCost = 150
+	dog_amount = 0
+dogClicks =  0
+dogUpgradeCost =  75
+dogCPS = 0
+
 	Clicks = 0
 	SunClicks = 0
 	AllClicks = 0

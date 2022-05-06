@@ -5,10 +5,14 @@ let SeaGullCPS = 0
 let AllTowerClicksDecimal = 0
 let AllTowerClicks = 0
 let SeaGullLevel = 1
+let dogClicks =  0
+let dogCPS = 0
+
 
 onmessage = function(e) {
  SunCPS = e.data.SunCPS
  SeaGullCPS = e.data.SeaGullCPS
+	dogCPS = e.data.dogCPS
   if (e.data.SunClicks != undefined){
     SunClicks = e.data.SunClicks
   }
@@ -18,15 +22,19 @@ onmessage = function(e) {
   if (e.data.SeaGullLevel != undefined){
     SeaGullLevel = e.data.SeaGullLevel
   }
+if (e.data.dogClicks != undefined){
+    dogClicks = e.data.dogClicks
+  }
 }
 
 function timedCount() {
   SunClicks += SunCPS;
-  //1                         0.1          2
+	dogClicks += dogCPS;                         
   AllTowerClicksDecimal += SeaGullCPS * SeaGullLevel;
-  AllTowerClicks = Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel;
+  AllTowerClicks = (Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel)+ Math.Floor(dogClicks);
   postMessage({ 
 		SunClicks: SunClicks,
+	  dogClicks: dogClicks,
 		AllTowerClicks: AllTowerClicks  
 	});
   setTimeout("timedCount()", 16);

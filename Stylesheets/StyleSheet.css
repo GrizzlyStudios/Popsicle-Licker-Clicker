@@ -10,6 +10,14 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+#Dog{
+	position: absolute;
+  width: 33.3vmin;
+	height: 12.4vmin;
+  left: 50%;
+  top: 115%;
+  transform: translate(-50%, -50%);
+}
 
 #PopsicleDiv {
   font-size: 24px;
@@ -26,6 +34,13 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+#DogPriceDiv{
+  top: 100%;
+  transform: translate(5vmin, 0%) rotate(30deg);
+  z-index: 100;
+}
+
 
 #UpgradesDiv{
   font-size: 24px;
