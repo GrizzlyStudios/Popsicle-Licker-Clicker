@@ -31,7 +31,7 @@ function timedCount() {
   SunClicks += SunCPS;
 	dogClicks += dogCPS;                         
   AllTowerClicksDecimal += SeaGullCPS * SeaGullLevel;
-  AllTowerClicks = (Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel)+ Math.Floor(dogClicks);
+  AllTowerClicks = (Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel)+ Math.floor(dogClicks);
   postMessage({ 
 		SunClicks: SunClicks,
 	  dogClicks: dogClicks,
