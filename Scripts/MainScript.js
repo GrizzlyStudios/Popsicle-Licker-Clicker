@@ -2,7 +2,7 @@
 //clicking
 let dog_amount = 0
 let dogClicks =  0
-let dogUpgradeCost =  75
+let dogUpgradeCost =  156
 let dogCPS = 0
 let Clicks = 0
 let SunClicks = 0
@@ -184,7 +184,7 @@ function upgradeSun() {
 function upgradedog() {
 	if (dogUpgradeCost <= popsicleNumber )
 	{
-		dogCPS += 0.00333333333334
+		dogCPS += 0.1333333333336
 		dog_amount += 1
 		popsiclesSpent += dogUpgradeCost
 		dogUpgradeCost = Math.ceil(dogUpgradeCost * 1.15)
