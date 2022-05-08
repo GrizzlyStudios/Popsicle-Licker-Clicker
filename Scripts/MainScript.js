@@ -407,7 +407,7 @@ function clearSave(){
 	biggerWingsUpgradeCost = 150
 	dog_amount = 0
 dogClicks =  0
-dogUpgradeCost =  75
+dogUpgradeCost =  156
 dogCPS = 0
 
 	Clicks = 0
