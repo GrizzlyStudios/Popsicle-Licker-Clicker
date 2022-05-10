@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: popsicle.tk
+Token: f7a1d6a78f4469f45ed6ff8e90bab2dabd67cb997bdf432f8f4513818d55a28d
