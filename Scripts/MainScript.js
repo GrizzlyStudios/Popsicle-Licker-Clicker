@@ -1,5 +1,10 @@
 //JavaScript Document
 //clicking
+let popsicleStand_amount = 0
+let popsicleStandClicks =  0
+let popsicleStandUpgradeCost =  1246
+let popsicleStandCPS = 0
+
 let dog_amount = 0
 let dogClicks =  0
 let dogUpgradeCost =  156
@@ -167,6 +172,17 @@ function sun_switch () {
 	}
 }
 
+function upgradepopsicleStand() {
+	if (popsicleStandUpgradeCost <= popsicleNumber )
+	{
+		popsicleStandCPS += 1.0666666664
+		popsicleStand_amount += 1
+		popsiclesSpent += popsicleStandUpgradeCost
+		popsicleStandUpgradeCost = Math.ceil(popsicleStandUpgradeCost * 1.15)
+	}
+}
+
+
 //called when sun is upgraded. Idly "melts" popsicle 
 //void -> void
 function upgradeSun() {
@@ -267,12 +283,14 @@ function gameLoop()
 		SunClicks = e.data.SunClicks;
 		AllTowerClicks = e.data.AllTowerClicks;
 		dogClicks= e.data.dogClicks;
+		popsicleStandClicks= e.data.popsicleStandClicks;
 	}
 
 	w.postMessage({ 
 		SunCPS: SunCPS,
 		dogCPS: dogCPS,
 		SeaGullCPS: SeaGullCPS,
+		popsicleStandCPS: popsicleStandCPS,
 		SeaGullLevel: SeaGullLevel
 	})
 	
@@ -282,6 +300,8 @@ function gameLoop()
 	document.getElementById("SeaGullPriceP").innerHTML = "$" + SeaGullUpgradeCost
 	document.getElementById("BiggerWingsPriceP").innerHTML = "$" + biggerWingsUpgradeCost
 	document.getElementById("DogPriceP").innerHTML = "$" + dogUpgradeCost
+	
+	document.getElementById("PopsicleStandPriceP").innerHTML = "$" + popsicleStandUpgradeCost
 }
 
 //shows and hides the shop
@@ -316,6 +336,11 @@ function showSettings(){
 function loadGame()
 {
 	var savedGame = JSON.parse(localStorage.getItem("gameSave"))
+	if (typeof savedGame.popsicleStand_amount !== "undefined"){popsicleStand_amount = savedGame.popsicleStand_amount}
+if (typeof savedGame.popsicleStandClicks !== "undefined"){popsicleStandClicks = savedGame.popsicleStandClicks}
+if (typeof savedGame.popsicleStandUpgradeCost !== "undefined"){popsicleStandUpgradeCost = savedGame.popsicleStandUpgradeCost}
+if (typeof savedGame.popsicleStandCPS !== "undefined"){popsicleStandCPS = savedGame.popsicleStandCPS}
+
 	if (typeof savedGame.SeaGullLevel !== "undefined"){SeaGullLevel = savedGame.SeaGullLevel}
 	if (typeof savedGame.Name !== "undefined"){Name = savedGame.Name}
 	if (typeof savedGame.SunCPS !== "undefined"){SunCPS = savedGame.SunCPS}
@@ -354,6 +379,8 @@ if (typeof savedGame.dogCPS !== "undefined"){dogCPS = savedGame.dogCPS}
 		SunClicks: SunClicks,
 		dogClicks: dogClicks,
 		AllTowerClicks: AllTowerClicks,
+		popsicleStandCPS: popsicleStandCPS,
+		popsicleStandClicks: popsicleStandClicks,
 		SeaGullLevel: SeaGullLevel
 	})	
 }
@@ -366,6 +393,10 @@ function saveGame()
 dogClicks: dogClicks,
 dogUpgradeCost: dogUpgradeCost,
 dogCPS: dogCPS,
+popsicleStand_amount: popsicleStand_amount,
+popsicleStandClicks: popsicleStandClicks,
+popsicleStandUpgradeCost: popsicleStandUpgradeCost,
+popsicleStandCPS: popsicleStandCPS,
 
 		SeaGullLevel: SeaGullLevel,
 		Name: Name,
@@ -409,6 +440,10 @@ function clearSave(){
 dogClicks =  0
 dogUpgradeCost =  156
 dogCPS = 0
+popsicleStand_amount = 0
+popsicleStandClicks =  0
+popsicleStandUpgradeCost =  1246
+popsicleStandCPS = 0
 
 	Clicks = 0
 	SunClicks = 0

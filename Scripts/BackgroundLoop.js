@@ -7,12 +7,20 @@ let AllTowerClicks = 0
 let SeaGullLevel = 1
 let dogClicks =  0
 let dogCPS = 0
+let popsicleStandClicks =  0
+let popsicleStandCPS = 0
+
 
 
 onmessage = function(e) {
  SunCPS = e.data.SunCPS
  SeaGullCPS = e.data.SeaGullCPS
 	dogCPS = e.data.dogCPS
+	popsicleStandCPS = e.data.popsicleStandCPS
+if (e.data.popsicleStandClicks != undefined){
+    popsicleStandClicks = e.data.popsicleStandClicks
+  }
+
   if (e.data.SunClicks != undefined){
     SunClicks = e.data.SunClicks
   }
@@ -29,13 +37,14 @@ if (e.data.dogClicks != undefined){
 
 function timedCount() {
   SunClicks += SunCPS;
-	dogClicks += dogCPS;                         
+	dogClicks += dogCPS;                         popsicleStandClicks += popsicleStandCPS;                         
   AllTowerClicksDecimal += SeaGullCPS * SeaGullLevel;
-  AllTowerClicks = (Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel)+ Math.floor(dogClicks);
+  AllTowerClicks = (Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel)+ Math.floor(dogClicks) + Math.Floor(popsicleStandClicks);
   postMessage({ 
 		SunClicks: SunClicks,
 	  dogClicks: dogClicks,
-		AllTowerClicks: AllTowerClicks  
+		AllTowerClicks: AllTowerClicks,  
+	  popsicleStandClicks: popsicleStandClicks
 	});
   setTimeout("timedCount()", 16);
 }
