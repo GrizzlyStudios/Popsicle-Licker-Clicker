@@ -25,7 +25,7 @@ if (e.data.popsicleStandClicks != undefined){
     SunClicks = e.data.SunClicks
   }
   if (e.data.AllTowerClicks != undefined){
-    AllTowerClicksDecimal = e.data.AllTowerClicks
+    AllTowerClicksDecimal = e.data.AllTowerClicksDecimal
   }
   if (e.data.SeaGullLevel != undefined){
     SeaGullLevel = e.data.SeaGullLevel
@@ -44,6 +44,7 @@ function timedCount() {
 		SunClicks: SunClicks,
 	  dogClicks: dogClicks,
 		AllTowerClicks: AllTowerClicks,  
+    AllTowerClicksDecimal: AllTowerClicksDecimal,
 	  popsicleStandClicks: popsicleStandClicks
 	});
   setTimeout("timedCount()", 16);

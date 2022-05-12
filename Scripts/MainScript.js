@@ -4,7 +4,7 @@ let popsicleStand_amount = 0
 let popsicleStandClicks =  0
 let popsicleStandUpgradeCost =  1246
 let popsicleStandCPS = 0
-
+let AllTowerClicksDecimal = 0
 let dog_amount = 0
 let dogClicks =  0
 let dogUpgradeCost =  156
@@ -353,6 +353,7 @@ if (typeof savedGame.popsicleStandCPS !== "undefined"){popsicleStandCPS = savedG
 	if (typeof savedGame.AllClicks !== "undefined"){AllClicks = savedGame.AllClicks}
 	if (typeof savedGame.SeaGullClicks !== "undefined"){SeaGullClicks = savedGame.SeaGullClicks}
 	if (typeof savedGame.AllTowerClicks !== "undefined"){AllTowerClicks = savedGame.AllTowerClicks}
+	if (typeof savedGame.AllTowerClicksDecimal !== "undefined"){AllTowerClicksDecimal = savedGame.AllTowerClicksDecimal}
 	if (typeof savedGame.heightMultiplier !== "undefined"){heightMultiplier = savedGame.heightMultiplier}
 	if (typeof savedGame.level !== "undefined"){level = savedGame.level}
 	if (typeof savedGame.hue !== "undefined"){hue = savedGame.hue}
@@ -378,7 +379,7 @@ if (typeof savedGame.dogCPS !== "undefined"){dogCPS = savedGame.dogCPS}
 		SeaGullCPS: SeaGullCPS,
 		SunClicks: SunClicks,
 		dogClicks: dogClicks,
-		AllTowerClicks: AllTowerClicks,
+		AllTowerClicksDecimal: AllTowerClicksDecimal,
 		popsicleStandCPS: popsicleStandCPS,
 		popsicleStandClicks: popsicleStandClicks,
 		SeaGullLevel: SeaGullLevel
@@ -397,7 +398,7 @@ popsicleStand_amount: popsicleStand_amount,
 popsicleStandClicks: popsicleStandClicks,
 popsicleStandUpgradeCost: popsicleStandUpgradeCost,
 popsicleStandCPS: popsicleStandCPS,
-
+AllTowerClicksDecimal: AllTowerClicksDecimal,
 		SeaGullLevel: SeaGullLevel,
 		Name: Name,
 		Clicks: Clicks,
@@ -437,6 +438,7 @@ function clearSave(){
 	Name = "Change Name Here"
 	biggerWingsUpgradeCost = 150
 	dog_amount = 0
+	AllTowerClicksDecimal = 0
 dogClicks =  0
 dogUpgradeCost =  156
 dogCPS = 0
