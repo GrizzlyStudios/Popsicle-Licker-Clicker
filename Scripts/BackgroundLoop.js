@@ -39,7 +39,7 @@ function timedCount() {
   SunClicks += SunCPS;
 	dogClicks += dogCPS;                         popsicleStandClicks += popsicleStandCPS;                         
   AllTowerClicksDecimal += SeaGullCPS * SeaGullLevel;
-  AllTowerClicks = (Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel)+ Math.floor(dogClicks) + Math.Floor(popsicleStandClicks);
+  AllTowerClicks = (Math.floor(AllTowerClicksDecimal / SeaGullLevel) * SeaGullLevel)+ Math.floor(dogClicks) + Math.floor(popsicleStandClicks);
   postMessage({ 
 		SunClicks: SunClicks,
 	  dogClicks: dogClicks,
