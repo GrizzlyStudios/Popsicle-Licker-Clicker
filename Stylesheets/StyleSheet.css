@@ -10,6 +10,22 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+#PopsicleStand{
+	position: absolute;
+  width: 33.3vmin;
+	height: 33.3vmin;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+}
+
+#PopsicleStandPriceDiv{
+  top: 130%;
+  transform: translate(5vmin, 0%) rotate(30deg);
+  z-index: 100;
+}
+
+
 #Dog{
 	position: absolute;
   width: 33.3vmin;
