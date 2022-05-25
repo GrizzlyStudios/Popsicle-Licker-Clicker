@@ -243,7 +243,7 @@
 #BackgroundCenter{
 	height:102vh;
 	width: 177vh;
-	background-image: url("../Images/BackgroundCenter.jpg");
+	background-image: url("../Images/BackgroundCenter.webp");
 	background-size: 101%;
 	background-repeat: no-repeat;
 	z-index: 0;
@@ -259,7 +259,7 @@
 
 #BackgroundLeft{
 	--posx: 0px;
-	background-image:url("../Images/Background.jpg"); 
+	background-image:url("../Images/Background.webp"); 
 	background-repeat: repeat-x;
 	background-size: 360vh;
 	background-position: right;
@@ -280,7 +280,7 @@
 
 #BackgroundRight{
 	--posx: 0px;
-	background-image:url("../Images/Background.jpg"); 
+	background-image:url("../Images/Background.webp"); 
 	background-repeat: repeat-x;
 	background-size: 360vh;
 	background-position: left;
