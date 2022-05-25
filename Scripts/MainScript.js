@@ -100,7 +100,7 @@ function resize()
 function popsiclePopup(){	
 	var img = document.createElement('img');
 	img.id = "popsiclePopup";
-    img.src = "./Images/+.webp";
+    img.src = "./Images/+.png";
 	img.classList.add("unSelectable");
 	img.classList.add("popsiclePopup");
 	img.style.position = "absolute";
@@ -253,9 +253,9 @@ function gameLoop()
 	popsicleNumber = (AllTowerClicks + popsicles) - popsiclesSpent
 	document.getElementById("PopsiclesNumber").innerHTML = "$" + popsicleNumber
 	document.getElementById("PopsicleTop").style.setProperty('--hue', hue + "deg")
-	document.getElementById("PopsicleTop").src="Images/Popsicle Top " + Math.min(PopsicleLevel, maxPopsicleLevel) + ".webp"
-	document.getElementById("PopsicleStickIn").src="Images/Popsicle Stick " + Math.min(PopsicleLevel, maxPopsicleLevel) + ".webp"
-	document.getElementById("PopsicleStick").src="Images/Popsicle Stick Bottom " + Math.min(PopsicleLevel, maxPopsicleLevel) + ".webp"
+	document.getElementById("PopsicleTop").src="Images/Popsicle Top " + Math.min(PopsicleLevel, maxPopsicleLevel) + ".png"
+	document.getElementById("PopsicleStickIn").src="Images/Popsicle Stick " + Math.min(PopsicleLevel, maxPopsicleLevel) + ".png"
+	document.getElementById("PopsicleStick").src="Images/Popsicle Stick Bottom " + Math.min(PopsicleLevel, maxPopsicleLevel) + ".png"
 	document.getElementById("PopsicleStickIn").style.setProperty('--hueStick', hue + "deg")
 	document.title = (popsicleNumber == 1) ? (popsicleNumber + " popsicle - Popsicle Licker Clicker") : (popsicleNumber + " popsicles - Popsicle Licker Clicker")
 
