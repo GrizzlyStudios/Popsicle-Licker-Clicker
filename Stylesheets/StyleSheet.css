@@ -169,7 +169,7 @@
 }
 
 #PopsicleTop{
-	width: 37vh;
+	width: 25vh;
   --height: 200px;
 	height: var(--height);
 	position: absolute;
