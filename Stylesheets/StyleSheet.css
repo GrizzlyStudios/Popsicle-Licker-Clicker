@@ -261,7 +261,7 @@
 	--posx: 0px;
 	background-image:url("../Images/Background.png"); 
 	background-repeat: repeat-x;
-	background-size: 360vh;
+	background-size: 178vh;
 	background-position: right;
 	width: 100vw;
   height: 100vh;
@@ -282,7 +282,7 @@
 	--posx: 0px;
 	background-image:url("../Images/Background.png"); 
 	background-repeat: repeat-x;
-	background-size: 360vh;
+	background-size: 178vh;
 	background-position: left;
 	width: 100vw;
   height: 100vh;
