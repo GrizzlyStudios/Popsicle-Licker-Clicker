@@ -282,6 +282,7 @@ function gameLoop()
 	w.onmessage = function(e) {
 		SunClicks = e.data.SunClicks;
 		AllTowerClicks = e.data.AllTowerClicks;
+		AllTowerClicksDecimal = e.data.AllTowerClicksDecimal;
 		dogClicks= e.data.dogClicks;
 		popsicleStandClicks= e.data.popsicleStandClicks;
 	}

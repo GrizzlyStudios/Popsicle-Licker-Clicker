@@ -17,14 +17,14 @@ onmessage = function(e) {
     SeaGullCPS = e.data.SeaGullCPS
     dogCPS = e.data.dogCPS
     popsicleStandCPS = e.data.popsicleStandCPS
-    
+
     if (e.data.popsicleStandClicks != undefined) {
         popsicleStandClicks = e.data.popsicleStandClicks
     }
     if (e.data.SunClicks != undefined) {
         SunClicks = e.data.SunClicks
     }
-    if (e.data.AllTowerClicks != undefined) {
+    if (e.data.AllTowerClicksDecimal != undefined) {
         AllTowerClicksDecimal = e.data.AllTowerClicksDecimal
     }
     if (e.data.SeaGullLevel != undefined) {
